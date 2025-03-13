@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+    I am directed to keep the game set entirely in console, so that is what I will do!
+
+<script>
+    
+    let computerChoice = "";
+    let humanChoice = "";
+
+    function getComputerChoice(){
+
+        let selector = Math.floor((Math.random()*3)+1);
+
+        if (selector === 1){
+            computerChoice = "ROCK";
+        }
+        else if (selector === 2){
+            computerChoice = "PAPER";
+        }
+        else{
+            computerChoice = "SCISSORS";
+        }
+
+        return computerChoice;
+
+    }
+    
+    getComputerChoice();
+    console.log(computerChoice);
+
+    function getHumanChoice(){
+
+        humanChoice = prompt("Please choose: Rock, Paper, or Scissors").toUpperCase();
+
+        if (humanChoice === "ROCK"){
+            return(humanChoice);
+        }
+        else if(humanChoice === "PAPER"){
+            return(humanChoice);
+        }
+        else if(humanChoice === "SCISSORS"){
+        }
+        else{
+            humanChoice = "Please F5 and choose a valid response!"
+            return(humanChoice);
+        }
+
+    }
+
+    getHumanChoice();
+    console.log(humanChoice)
+
+</script>
+
+</body>
+</html>
