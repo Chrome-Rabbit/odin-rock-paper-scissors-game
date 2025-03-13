@@ -14,6 +14,9 @@
     let computerChoice = "";
     let humanChoice = "";
 
+    let humanScore = 0;
+    let computerScore = 0;
+
     function getComputerChoice(){
 
         let selector = Math.floor((Math.random()*3)+1);
@@ -31,9 +34,7 @@
         return computerChoice;
 
     }
-    
-    getComputerChoice();
-    console.log(computerChoice);
+
 
     function getHumanChoice(){
 
@@ -54,8 +55,19 @@
 
     }
 
+    function playRound(humanChoice,computerChoice){
+
+        let outcome = null
+
+
+        console.log("The meatbag's choice was: " + humanChoice);
+        console.log("The operatic diva of circuits and steel's choice was: " + computerChoice);
+
+    }
+
+    getComputerChoice();
     getHumanChoice();
-    console.log(humanChoice)
+    playRound(humanChoice,computerChoice);
 
 </script>
 
