@@ -45,6 +45,7 @@
             return(humanChoice);
         }
         else if(humanChoice === "SCISSORS"){
+            return(humanChoice);
         }
         else{
             humanChoice = "Please choose a valid response!"
@@ -53,21 +54,16 @@
 
     }
 
-    function playRound(humanChoice,computerChoice){
-
-        let outcome = null
+    function playRound(humanChoice, computerChoice){
 
         switch (humanChoice){
-            
+
             case "ROCK":
                 if (computerChoice === "PAPER"){
                     computerScore = computerScore + 1
                 }
                 else if (computerChoice === "SCISSORS"){
                     humanScore = humanScore + 1
-                }
-                else{
-                    outcome = "Draw, please play another round"
                 }
                 break;
 
@@ -78,9 +74,6 @@
                 else if (computerChoice === "ROCK"){
                     humanScore = humanScore + 1
                 }
-                else{
-                    outcome = "Draw, please play another round"
-                }
                 break;
                 
                 case "SCISSORS":
@@ -90,12 +83,8 @@
                 else if (computerChoice === "PAPER"){
                     humanScore = humanScore + 1
                 }
-                else{
-                    outcome = "Draw, please play another round"
-                }
                 break;
 
-                return humanScore,computerScore,outcome;
         }
 
 
@@ -121,7 +110,7 @@
     while (humanScore < 5 && computerScore < 5){
         getComputerChoice();
         getHumanChoice();
-        playRound(humanChoice,computerChoice);
+        playRound(humanChoice, computerChoice);
     }
 
     if (humanScore === 5){
