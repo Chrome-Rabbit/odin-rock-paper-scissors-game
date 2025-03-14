@@ -7,8 +7,6 @@
 </head>
 <body>
 
-    I am directed to keep the game set entirely in console, so that is what I will do!
-
 <script>
     
     let computerChoice = "";
@@ -38,7 +36,7 @@
 
     function getHumanChoice(){
 
-        humanChoice = prompt("Please choose: Rock, Paper, or Scissors").toUpperCase();
+        humanChoice = prompt("Please only choose: Rock, Paper, Scissors").toUpperCase();
 
         if (humanChoice === "ROCK"){
             return(humanChoice);
@@ -49,7 +47,7 @@
         else if(humanChoice === "SCISSORS"){
         }
         else{
-            humanChoice = "Please F5 and choose a valid response!"
+            humanChoice = "Please choose a valid response!"
             return(humanChoice);
         }
 
@@ -59,15 +57,85 @@
 
         let outcome = null
 
+        switch (humanChoice){
+            
+            case "ROCK":
+                if (computerChoice === "PAPER"){
+                    computerScore = computerScore + 1
+                }
+                else if (computerChoice === "SCISSORS"){
+                    humanScore = humanScore + 1
+                }
+                else{
+                    outcome = "Draw, please play another round"
+                }
+                break;
+
+                case "PAPER":
+                if (computerChoice === "SCISSORS"){
+                    computerScore = computerScore + 1
+                }
+                else if (computerChoice === "ROCK"){
+                    humanScore = humanScore + 1
+                }
+                else{
+                    outcome = "Draw, please play another round"
+                }
+                break;
+                
+                case "SCISSORS":
+                if (computerChoice === "ROCK"){
+                    computerScore = computerScore + 1
+                }
+                else if (computerChoice === "PAPER"){
+                    humanScore = humanScore + 1
+                }
+                else{
+                    outcome = "Draw, please play another round"
+                }
+                break;
+
+                return humanScore,computerScore,outcome;
+        }
+
 
         console.log("The meatbag's choice was: " + humanChoice);
         console.log("The operatic diva of circuits and steel's choice was: " + computerChoice);
+        console.log(`SCORE: MEATBAG: ${humanScore} | COMPUTER: ${computerScore}`)
 
     }
 
-    getComputerChoice();
-    getHumanChoice();
-    playRound(humanChoice,computerChoice);
+    function startGame(){
+        prompt("I am directed to keep the game set entirely in console, so that is what I will do! Hit f12 to open that up.", "Click over to the Console tab and then hit OK")
+        console.log("If you followed the instructions, you should see this just fine.")
+        prompt("Would you like to play Rock, Paper, Scissors with me?", "YES!!")
+        prompt("Well, I insist anyhow. The first to 5 points wins.","Okay...")
+
+    }
+
+    function playGame(){
+
+
+    startGame();
+
+    while (humanScore < 5 && computerScore < 5){
+        getComputerChoice();
+        getHumanChoice();
+        playRound(humanChoice,computerChoice);
+    }
+
+    if (humanScore === 5){
+        console.log("You Win!, Woohoo!")
+        prompt("You Win!, Woohoo!");
+    }
+    else if(computerScore === 5){
+        console.log("The computer wins! Boohoo!");
+        prompt("The computer wins! Boohoo!");
+    }
+
+    }
+
+    playGame();
 
 </script>
 
